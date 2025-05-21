@@ -26,6 +26,6 @@
 
 
 ## Реляційна схема
-![db_mdbook - public](https://github.com/user-attachments/assets/b49496e9-b6a1-404d-ad31-4d90bdd63fb7)
 
+![image](https://github.com/user-attachments/assets/504f3bd6-e090-42f3-8339-f8ead2826d13)
 
