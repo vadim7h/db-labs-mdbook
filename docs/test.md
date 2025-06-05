@@ -2,50 +2,56 @@
 
 ### Запуск сервера
 
-![image](https://github.com/user-attachments/assets/9974304e-d4a2-4869-996d-03d92659a3cd)
+```
+node app.js
+```
 
-## Перевірка працездатности сервісів
+## Перевірка працездатности
 
-### Список запитів
+### POST: створити користувача 
 
-![image](https://github.com/user-attachments/assets/79fafe5a-02e9-415d-a96c-85358cb15efc)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png1.png?raw=true)
 
-### GET: отримати всі команди
+### DELETE: видалити користувача
 
-![image](https://github.com/user-attachments/assets/508ec8a3-1f6a-4800-82f1-88aea9d56f0c)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png2.png?raw=true)
 
-### GET: отримати команду за id
+### GET: отримати список користувачів
 
-![image](https://github.com/user-attachments/assets/8e7abb83-51b6-4972-a5d9-9bdd0de1384c)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png3.png?raw=true)
 
-### POST: створити команду
+### GET: отримати користувача по id
 
-![image](https://github.com/user-attachments/assets/f6da559c-87a3-4cbb-ad2d-67af7eb235eb)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png4.png?raw=true)
 
-### PUT: редагувати назву команди
+### POST: створити подію
 
-![image](https://github.com/user-attachments/assets/2a1152d1-461f-47c0-82a4-64b10c57a17c)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png5.png?raw=true)
 
-### DELETE: видалити команду
+### DELETE: видалити подію
 
-![image](https://github.com/user-attachments/assets/cc46220f-7f7f-4010-a982-d9250f285426)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png6.png?raw=true)
 
-### GET: отримати всі проекти
+### PUT: оновити подію
 
-![image](https://github.com/user-attachments/assets/87d92236-3634-47b7-b98d-be1c4fa1cdd1)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png7.png?raw=true)
 
-### GET: отримати проект за id
+### POST: створити проєкт
 
-![image](https://github.com/user-attachments/assets/4dcccb34-b202-4db1-bd08-ad59f03f288b)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png8.png?raw=true)
 
-№№№ POST: створити проект
+### PUT: оновити назву проєкту
 
-![image](https://github.com/user-attachments/assets/f2029688-11fa-45e5-94a3-e9721324927f)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png9.png?raw=true)
 
-### PUT: редагувати назву проекту
+### DELETE: видалити проєкт
 
-![image](https://github.com/user-attachments/assets/799a24c8-f288-4a76-a1ac-dd191022f4a8)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png10.png?raw=true)
 
-### DELETE: видалити проект
+### GET: отримати список проєктів
 
-![image](https://github.com/user-attachments/assets/9b25db05-024c-4698-9e82-af40f689e97c)
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png11.png?raw=true)
+
+### GET: отримати проєкти пов'язані з користувачем
+
+![image](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/png12.png?raw=true)
