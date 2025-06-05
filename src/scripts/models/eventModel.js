@@ -1,11 +1,10 @@
 const pool = require('../config/db');
 
 module.exports = {
-  async createEvent({ user_id, action }) {
-    // підставимо заглушку для role_id, наприклад NULLABLE
+  async createEvent({ user_id, role_id, action }) {
     const res = await pool.query(
-      'INSERT INTO "Event" (user_id, role_id, action) VALUES ($1, NULL, $2) RETURNING *',
-      [user_id, action]
+      'INSERT INTO "Event" (user_id, role_id, action) VALUES ($1, $2, $3) RETURNING *',
+      [user_id, role_id, action]
     );
     return res.rows[0];
   },
