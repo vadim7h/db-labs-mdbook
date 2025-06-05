@@ -2,14 +2,23 @@ const pool = require('../config/db');
 
 module.exports = {
   async getAllProjects() {
-    const res = await pool.query('SELECT * FROM "Project"');
+    const res = await pool.query(
+      `SELECT p.*, 
+              json_agg(up.user_id) AS user_ids
+         FROM "Project" p
+    LEFT JOIN "User_Project" up ON up.project_id = p.id
+     GROUP BY p.id`
+    );
     return res.rows;
   },
 
-  async getProjectsByUserId(user_id) {
+  async getProjectsByUserId(userId) {
     const res = await pool.query(
-      'SELECT p.* FROM "Project" p JOIN "User_Project" up ON p.id = up.project_id WHERE up.user_id = $1',
-      [user_id]
+      `SELECT p.*
+         FROM "Project" p
+         JOIN "User_Project" up ON up.project_id = p.id
+        WHERE up.user_id = $1`,
+      [userId]
     );
     return res.rows;
   },
