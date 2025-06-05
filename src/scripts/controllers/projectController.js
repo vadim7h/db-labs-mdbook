@@ -10,15 +10,6 @@ module.exports = {
     }
   },
 
-  async getByUserId(req, res) {
-    try {
-      const projects = await Project.getProjectsByUserId(req.params.user_id);
-      res.json(projects);
-    } catch (err) {
-      res.status(500).json({ error: err.message });
-    }
-  },
-
   async create(req, res) {
     try {
       const project = await Project.createProject(req.body);
