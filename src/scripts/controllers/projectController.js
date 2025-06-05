@@ -1,9 +1,18 @@
-const Project = require('../models/projectModel');
+onst Project = require('../models/projectModel');
 
 module.exports = {
   async getAll(req, res) {
     try {
       const projects = await Project.getAllProjects();
+      res.json(projects);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
+
+  async getByUserId(req, res) {
+    try {
+      const projects = await Project.getProjectsByUserId(req.params.user_id);
       res.json(projects);
     } catch (err) {
       res.status(500).json({ error: err.message });
@@ -31,25 +40,7 @@ module.exports = {
   async remove(req, res) {
     try {
       await Project.deleteProject(req.params.id);
-      res.sendStatus(204);
-    } catch (err) {
-      res.status(500).json({ error: err.message });
-    }
-  },
-
-  async getByUser(req, res) {
-    try {
-      const projects = await Project.getProjectsByUser(req.params.userId);
-      res.json(projects);
-    } catch (err) {
-      res.status(500).json({ error: err.message });
-    }
-  },
-
-  async addUser(req, res) {
-    try {
-      const record = await Project.addUserToProject(req.body);
-      res.status(201).json(record);
+      res.json({ message: `Проєкт ${req.params.id} видалено` });
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
