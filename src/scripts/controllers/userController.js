@@ -32,7 +32,7 @@ module.exports = {
   async remove(req, res) {
     try {
       await User.deleteUser(req.params.id);
-      res.sendStatus(204);
+      res.json({ message: `Користувача ${req.params.id} видалено` });
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
