@@ -1,35 +1,25 @@
-const db = require('../config/db');
-
-const getAllUsers = () => {
-  return db.query('SELECT * FROM users ORDER BY id');
-};
-
-const getUserById = (id) => {
-  return db.query('SELECT * FROM users WHERE id = $1', [id]);
-};
-
-const createUser = (name, email) => {
-  return db.query(
-    'INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *',
-    [name, email]
-  );
-};
-
-const updateUser = (id, name, email) => {
-  return db.query(
-    'UPDATE users SET name = $1, email = $2 WHERE id = $3 RETURNING *',
-    [name, email, id]
-  );
-};
-
-const deleteUser = (id) => {
-  return db.query('DELETE FROM users WHERE id = $1', [id]);
-};
+const pool = require('../config/db');
 
 module.exports = {
-  getAllUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
+  async getAllUsers() {
+    const res = await pool.query('SELECT * FROM "User"');
+    return res.rows;
+  },
+
+  async getUserById(id) {
+    const res = await pool.query('SELECT * FROM "User" WHERE id = $1', [id]);
+    return res.rows[0];
+  },
+
+  async createUser({ nickname, email, password, photo }) {
+    const res = await pool.query(
+      'INSERT INTO "User" (nickname, email, password, photo) VALUES ($1, $2, $3, $4) RETURNING *',
+      [nickname, email, password, photo]
+    );
+    return res.rows[0];
+  },
+
+  async deleteUser(id) {
+    await pool.query('DELETE FROM "User" WHERE id = $1', [id]);
+  }
 };
