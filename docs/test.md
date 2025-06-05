@@ -10,7 +10,7 @@ node app.js
 
 ### Список запитів
 
-![image](https://github.com/user-attachments/assets/79fafe5a-02e9-415d-a96c-85358cb15efc)
+![image]([https://github.com/user-attachments/assets/79fafe5a-02e9-415d-a96c-85358cb15efc](https://github.com/vadim7h/db-labs-mdbook/blob/main/docs/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-06-05%20115331.png?raw=true))
 
 ### GET: отримати всі команди
 
