@@ -1,4 +1,5 @@
 const User = require('../models/userModel');
+const Project = require('../models/projectModel');
 
 module.exports = {
   async getAll(req, res) {
@@ -33,6 +34,15 @@ module.exports = {
     try {
       await User.deleteUser(req.params.id);
       res.json({ message: `Користувача ${req.params.id} видалено` });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
+
+  async getProjects(req, res) {
+    try {
+      const projects = await Project.getProjectsByUser(req.params.id);
+      res.json(projects);
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
